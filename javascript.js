@@ -1,16 +1,19 @@
 const container = document.querySelector('.container');
 const custom = document.getElementById('custom');
 
+const containerSize = 960;
 const defaultSize = 16;
 
 function createGrid(size) {
     container.innerHTML = '';
 
+    const squareSize = containerSize / size;
+
     container.style.display = 'grid';
-    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    container.style.width = '960px';
-    container.style.height = '960px';
+    container.style.gridTemplateColumns = `repeat(${size}, ${squareSize}px)`;
+    container.style.gridTemplateRows = `repeat(${size}, ${squareSize}px)`;
+    container.style.width = `${containerSize}`;
+    container.style.height = `${containerSize}`;
 
     for (let i = 0; i < size * size; i++) {
         const square = document.createElement('div');
@@ -33,5 +36,7 @@ function customizeGrid() {
         alert ("Please enter a number between 1 and 100.")
     }
 }
+
+custom.addEventListener('click', customizeGrid)
 
 createGrid(defaultSize);
