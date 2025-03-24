@@ -17,6 +17,10 @@ header {
 .container {
     display: flex;
     flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+    margin: 20px auto;
+    border: 2px solid black;
 }
 
 .container div {
