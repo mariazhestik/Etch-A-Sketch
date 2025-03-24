@@ -4,7 +4,7 @@ const gridSize = 16;
 function createGrid(size) {
     container.innerHTML = '';
 
-    container.styel.display = 'grid';
+    container.style.display = 'grid';
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     container.style.width = '960px';
