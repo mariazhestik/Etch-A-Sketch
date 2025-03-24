@@ -1,7 +1,7 @@
 const container = document.querySelector('.container');
 const custom = document.getElementById('custom');
 
-const deafaultSise = 16;
+const defaultSize = 16;
 
 function createGrid(size) {
     container.innerHTML = '';
@@ -24,7 +24,7 @@ function createGrid(size) {
     }
 }
 
-function cutomizeGrid() {
+function customizeGrid() {
     let gridsNumber = Number(prompt("Please enter the number of grids per side (max 100):"));
 
     if (gridsNumber > 0 && gridsNumber <= 100) {
@@ -34,4 +34,4 @@ function cutomizeGrid() {
     }
 }
 
-createGrid(gridSize);
+createGrid(defaultSize);
