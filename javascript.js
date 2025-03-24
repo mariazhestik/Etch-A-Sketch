@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const custom = document.getElementById('custom');
+const reset = document.getElementById('reset');
 
 const containerSize = 960;
 const defaultSize = 16;
@@ -23,7 +24,7 @@ function createGrid(size) {
         square.style.height = `${squareSize}px`;
 
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';
+            square.style.backgroundColor = getRandomColor();
         });
 
         container.appendChild(square);
@@ -40,6 +41,11 @@ function customizeGrid() {
     }
 }
 
+function getRandomColor() {
+    return `#{Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
 custom.addEventListener('click', customizeGrid)
+reset.addEventListener('click', () => createGrid(defaultSize));
 
 createGrid(defaultSize);
