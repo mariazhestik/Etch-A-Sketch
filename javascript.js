@@ -1,9 +1,12 @@
 const container = document.querySelector('.container');
 const custom = document.getElementById('custom');
 const reset = document.getElementById('reset');
+const black = document.getElementById('black');
+const RGB = document.getElementById('RGB');
 
 const containerSize = 960;
 const defaultSize = 16;
+let currentMode = "black";
 
 function createGrid(size) {
     container.innerHTML = '';
@@ -24,7 +27,11 @@ function createGrid(size) {
         square.style.height = `${squareSize}px`;
 
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = getRandomColor();
+            if (currentMode === "black") {
+                square.style.backgroundColor = 'black';
+            } else if (currentMode === "RGB") {
+                square.style.backgroundColor = getRandomColor();
+            }
         });
 
         container.appendChild(square);
@@ -47,5 +54,11 @@ function getRandomColor() {
 
 custom.addEventListener('click', customizeGrid)
 reset.addEventListener('click', () => createGrid(defaultSize));
+black.addEventListener('click', () => {
+    currentMode = "black";
+});
+RGB.addEventListener('click', () => {
+    currentMode = "RGB";
+});
 
 createGrid(defaultSize);
