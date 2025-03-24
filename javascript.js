@@ -4,7 +4,7 @@ const reset = document.getElementById('reset');
 const black = document.getElementById('black');
 const RGB = document.getElementById('RGB');
 
-const containerSize = 960;
+const containerSize = 600;
 const defaultSize = 16;
 let currentMode = "black";
 
