@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
-const gridSize = 16;
+const custom = document.getElementById('custom');
+
+const deafaultSise = 16;
 
 function createGrid(size) {
     container.innerHTML = '';
@@ -19,6 +21,16 @@ function createGrid(size) {
         });
 
         container.appendChild(square);
+    }
+}
+
+function cutomizeGrid() {
+    let gridsNumber = Number(prompt("Please enter the number of grids per side (max 100):"));
+
+    if (gridsNumber > 0 && gridsNumber <= 100) {
+        createGrid(gridsNumber);
+    } else {
+        alert ("Please enter a number between 1 and 100.")
     }
 }
 
